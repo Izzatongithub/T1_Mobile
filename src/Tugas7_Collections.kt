@@ -38,7 +38,7 @@ fun main() {
     println("No  NIM      Nama              MataKuliah    Nilai")
 
     daftarMhs.forEachIndexed { index, mhs ->
-        println("${index+1}  ${mhs.nim}  ${mhs.nama}  ${mhs.mataKuliah}  ${mhs.nilai}")
+        println("${index+1}\t${mhs.nim}\t${mhs.nama}\t\t${mhs.mataKuliah}\t${mhs.nilai}")
     }
 
     // filter mhs lulus
@@ -97,9 +97,10 @@ fun main() {
     }
 
     // cari nama mhs
-    val keyword = "iz"
+    print("\nMasukkan nama mahasiswa: ")
+    val keyword = readLine()
     val hasilCari = daftarMhs.filter { mhs ->
-        mhs.nama.contains(keyword, ignoreCase = true) }
+        mhs.nama.contains(keyword.toString(), ignoreCase = true) }
 
     println("\n===== HASIL PENCARIAN NAMA \"$keyword\" =====")
     hasilCari.forEach { mhs ->
